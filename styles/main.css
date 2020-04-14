@@ -22,6 +22,11 @@ video {
   min-height: 100%;
 }
 
+form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -116,6 +121,7 @@ section:nth-of-type(3) p {
 }
 section:nth-of-type(4) {
   background-image: linear-gradient(145deg, #2d5664, #3c5854, #675d21);
+  flex-direction: column;
 }
 section:nth-of-type(4) h1,
 section:nth-of-type(4) h2,

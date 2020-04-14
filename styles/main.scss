@@ -44,6 +44,11 @@ video {
   min-height: 100%;
 }
 
+form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -154,6 +159,7 @@ section {
 
   &:nth-of-type(4) {
     background-image: $sct4_bg;
+    flex-direction: column;
 
     h1,
     h2,
