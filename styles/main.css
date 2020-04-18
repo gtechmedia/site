@@ -1,16 +1,23 @@
 @import url("./normalize.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Voces&display=swap");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
-/* -------------------------- */
-/* -------------------------- */
-/* -------------------------- */
-/* -------------------------- */
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2.5em;
 }
 
 video {
@@ -20,11 +27,6 @@ video {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-}
-
-form fieldset {
-  display: flex;
-  flex-direction: column;
 }
 
 .fullscreen-bg {
@@ -50,52 +52,88 @@ nav {
 }
 nav ul {
   display: flex;
+  justify-content: space-between;
   list-style: none;
-  margin-top: 0;
 }
-nav li:not(:first-of-type) {
+nav ul li:not(:first-of-type) {
   margin-top: 1.5em;
 }
-nav li {
-  text-transform: uppercase;
-  margin: 0.5em 2.5em;
+nav ul li:first-of-type {
+  margin-top: 0.5em;
 }
-nav li img {
+nav ul li {
+  text-transform: uppercase;
+}
+nav ul li img {
   width: 150px;
   height: auto;
 }
-nav li a {
+nav ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 1.2em;
 }
-nav li a:hover {
+nav ul li a:hover {
   color: aqua;
 }
 
 section {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   height: 100vh;
   margin: 0;
   padding: 2.5em;
-  place-content: center;
 }
 section h1,
 section h2,
 section h3 {
   margin: 0;
   text-transform: uppercase;
+  font-size: 1.5em;
+}
+section a {
+  width: 100%;
+  height: 25px;
+  font-size: 3em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+section a:hover {
+  cursor: pointer;
+}
+section i:not(.fa-chevron-circle-down) {
+  font-size: 1.5em;
+}
+section div.section__items {
+  display: flex;
+}
+section div.section__items article {
+  flex-direction: column;
+  height: 250px;
+  margin: 1.5em;
+  font-family: "Voces", sans-serif;
 }
 section:nth-of-type(1) {
   background-color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+section:nth-of-type(1) h1 {
+  font-size: 2.2em;
+  margin-top: 1.5em;
 }
 section:nth-of-type(1) h1,
 section:nth-of-type(1) h2,
 section:nth-of-type(1) h3 {
-  color: aqua;
+  color: white;
+  text-shadow: 1px 1px 4px aqua;
 }
 section:nth-of-type(1) p {
   color: white;
+}
+section:nth-of-type(1) a:hover {
+  color: aqua;
 }
 section:nth-of-type(2) {
   background-color: #4a4a4a;
@@ -108,6 +146,12 @@ section:nth-of-type(2) h3 {
 section:nth-of-type(2) p {
   color: white;
 }
+section:nth-of-type(2) a:hover {
+  color: aqua;
+}
+section:nth-of-type(2) div.section__items article {
+  border-bottom: 2px solid aqua;
+}
 section:nth-of-type(3) {
   background-color: #feeb32;
 }
@@ -118,6 +162,12 @@ section:nth-of-type(3) h3 {
 }
 section:nth-of-type(3) p {
   color: #59595a;
+}
+section:nth-of-type(3) a:hover {
+  color: #7700c5;
+}
+section:nth-of-type(3) div.section__items article {
+  border-bottom: 2px solid #7700c5;
 }
 section:nth-of-type(4) {
   background-image: linear-gradient(145deg, #2d5664, #3c5854, #675d21);
@@ -131,8 +181,18 @@ section:nth-of-type(4) h3 {
 section:nth-of-type(4) p {
   color: aqua;
 }
+section:nth-of-type(4) a:hover {
+  color: #feeb32;
+}
 section:nth-of-type(5) {
+  height: 75vh;
+  text-align: center;
   background-color: #323232;
+  background: url("../assets/image/contact.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 section:nth-of-type(5) h1,
 section:nth-of-type(5) h2,
@@ -142,11 +202,78 @@ section:nth-of-type(5) h3 {
 section:nth-of-type(5) p {
   color: #828282;
 }
+section:nth-of-type(5) form {
+  display: flex;
+}
+section:nth-of-type(5) form fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 5em;
+  background-color: rgba(25, 25, 25, 0.8);
+  width: 60vw;
+  border: 1px solid #4b4b4b;
+  border-radius: 8px;
+}
+section:nth-of-type(5) form input,
+section:nth-of-type(5) form textarea {
+  border: none;
+  margin: 0.5em;
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid grey;
+  color: grey;
+  text-align: left;
+  font-weight: lighter;
+  outline: none !important;
+}
+section:nth-of-type(5) form input {
+  height: 35px;
+}
+section:nth-of-type(5) form input:focus {
+  color: #fff;
+  border-bottom: 1px solid aqua;
+}
+section:nth-of-type(5) form textarea:focus {
+  color: #fff;
+  border-bottom: 1px solid aqua;
+}
+section:nth-of-type(5) form button {
+  padding: 0.5em;
+  border-radius: 8px;
+  background-color: aqua;
+  color: #323232;
+  border: none;
+}
+section:nth-of-type(5) form button:hover {
+  opacity: 0.6;
+}
+section:nth-of-type(5) form .form__button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 1.5em;
+}
 
 footer {
   display: flex;
+  height: 30vh;
+  width: 100vw;
   padding: 2em;
-  background-color: #282828;
+  bottom: 0;
+  background-color: #191919;
+  color: #323232;
+  border-top: 2px solid #828282;
+}
+footer div {
+  width: 33.33%;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+}
+footer ul li {
+  list-style: none;
+  margin: 0.2em;
 }
 
 @media (min-aspect-ratio: 16/9) {
